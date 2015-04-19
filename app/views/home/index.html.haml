@@ -1,0 +1,17 @@
+.row
+  - if @reveal_cards
+    .alert.alert-success= "The winner is #{@game.players[@scorer.winning_hand.id]} with a #{@scorer.winning_hand.rank.to_s.capitalize.tr("_", " ")}"
+  .col-md-12
+    = render 'player', reveal_cards: @reveal_cards, player: @game.hands.first
+    .row.deck
+      %ul.cards.list-inline.text-center
+        - @game.deck.visible_cards.each do |card|
+          - if @reveal_cards
+            %li{style: "background: url(/assets/cards/#{card.to_s.downcase.tr(" ","-")}.png) no-repeat top center; background-size: auto 100%;"}
+          - else
+            %li{style: "background: url(/assets/cards/back-panel.png) no-repeat top center; background-size: auto 100%;"}
+    = render 'player', reveal_cards: true, player: @game.hands.last
+  - if @reveal_cards
+    = link_to 'Play again?', root_path, class: 'btn btn-primary button-primary expand col-md-12'
+  - else
+    = link_to 'Display the winner', home_play_path, class: 'btn button-primary expand col-md-12'

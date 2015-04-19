@@ -1,0 +1,80 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$th-background-color: #edeff0;
+$th-content-color: #fff;
+
+body {
+  background-color: $th-background-color;
+}
+
+.deck {
+  background-color: #000;
+}
+
+.button-primary {
+  margin-top: 10px;
+  font-weight: bold !important;
+  text-shadow: 0 1px 0px rgba(0,0,0,0.15);
+  border-width: 1px 1px 3px;
+  border-style: solid;
+  border-color: #3dc264;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  background: #4fca74;
+  color: #fff;
+  &:hover {
+    background: #4fca74;
+    border-color: #35b15a;
+    color: #fff;
+  }
+  &:active {
+    background: #4fca74;
+    color: #fff;
+  }
+}
+
+.hand {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: $th-content-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.cards  {
+  list-style: none;
+  li {
+    width: 137px;
+    height: 200px;
+    background-color: $th-content-color;
+    margin: 20px 0;
+  }
+}
+
+.player-name {
+  display: block;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.player {
+  background-color: #2d3339;
+  color: #fff;
+  .cards {
+    visibility: visible;
+    display: inline;
+  }
+}

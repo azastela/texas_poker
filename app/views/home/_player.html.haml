@@ -1,0 +1,10 @@
+.row.player
+  .col-md-2
+    %span.player-name= @game.players[player.id]
+  .col-md-10
+    %ul.cards.list-inline
+      - player.cards.each do |card|
+        - if reveal_cards
+          %li{style: "background: url(/assets/cards/#{card.to_s.downcase.tr(" ","-")}.png) no-repeat top center; background-size: auto 100%;"}
+        - else
+          %li{style: "background: url(/assets/cards/back-panel.png) no-repeat top center; background-size: auto 100%;"}
